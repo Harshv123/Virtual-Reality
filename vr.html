@@ -3,6 +3,8 @@
 <head>
   <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/wmurphyrd/aframe-super-hands-component@latest/dist/aframe-super-hands.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
 </head>
 <body>
   <a-scene>
@@ -60,7 +62,59 @@
 <a-cylinder position="0.7 -0.3 -2.3" radius="0.05" height="0.6" material="color: #8B5A2B;"></a-cylinder>
 <a-cylinder position="-0.7 -0.3 -1.7" radius="0.05" height="0.6" material="color: #8B5A2B;"></a-cylinder>
 <a-cylinder position="0.7 -0.3 -1.7" radius="0.05" height="0.6" material="color: #8B5A2B;"></a-cylinder>
+<!-- Bigger Chair positioned farther from the table -->
+<a-box position="0 -0.1 -3.5" width="0.7" height="0.07" depth="0.7" material="color: #654321; metalness: 0.2; roughness: 0.5;"></a-box> 
+<a-box position="0 0.4 -3.8" width="0.7" height="0.8" depth="0.05" material="color: #654321; metalness: 0.2; roughness: 0.5;"></a-box> 
 
+<!-- Chair legs adjusted -->
+<a-cylinder position="-0.3 -0.4 -3.3" radius="0.04" height="0.6" material="color: #4D3227;"></a-cylinder>
+<a-cylinder position="0.3 -0.4 -3.3" radius="0.04" height="0.6" material="color: #4D3227;"></a-cylinder>
+<a-cylinder position="-0.3 -0.4 -3.7" radius="0.04" height="0.6" material="color: #4D3227;"></a-cylinder>
+<a-cylinder position="0.3 -0.4 -3.7" radius="0.04" height="0.6" material="color: #4D3227;"></a-cylinder>
+
+<!-- Light Bulb with Light Source -->
+<a-entity position="0 3 -1">
+  <a-sphere radius="0.1" material="color: #FFFFE0; emissive: #FFFFA0; emissiveIntensity: 0.8; transparent: true; opacity: 0.9;"></a-sphere>
+  <a-cylinder position="0 0.1 0" radius="0.02" height="0.1" material="color: #888888;"></a-cylinder>
+  <a-light type="point" intensity="1.5" distance="5" color="#FFFFAA"></a-light>
+</a-entity>
+
+<a-entity id="rig" position="0 1.6 0">
+  <a-camera look-controls wasd-controls>
+    <a-cursor color="#FF0000"></a-cursor>
+  </a-camera>
+</a-entity>
+
+<!-- Walls for the room -->
+<a-box position="0 1.5 -5" width="10" height="3" depth="0.1" material="color: #A0A0A0;"></a-box>
+<a-box position="-5 1.5 0" width="0.1" height="3" depth="10" material="color: #A0A0A0;"></a-box>
+<a-box position="5 1.5 0" width="0.1" height="3" depth="10" material="color: #A0A0A0;"></a-box>
+
+<!-- Painting on the side wall -->
+<a-plane position="-4.9 2 0" width="2" height="1.5" material="src: https://cdn.pixabay.com/photo/2016/03/09/09/22/poppies-1240989_960_720.jpg;"></a-plane>
+
+<!-- Sofa in the corner -->
+<a-box position="4 -0.2 -4" width="1.5" height="0.4" depth="0.7" material="color: #6A5ACD; metalness: 0.2; roughness: 0.5;"></a-box>
+<a-box position="4 0.2 -4.3" width="1.5" height="0.6" depth="0.1" material="color: #6A5ACD; metalness: 0.2; roughness: 0.5;"></a-box>
+<a-box position="3.35 0.2 -4" width="0.1" height="0.6" depth="0.7" material="color: #6A5ACD;"></a-box>
+<a-box position="4.65 0.2 -4" width="0.1" height="0.6" depth="0.7" material="color: #6A5ACD;"></a-box>
+
+<!-- Table in front of the sofa -->
+<a-box position="4 -0.1 -3" width="1" height="0.2" depth="0.6" material="color: #8B5A2B; metalness: 0.2; roughness: 0.5;"></a-box>
+<a-cylinder position="3.7 -0.3 -3.2" radius="0.05" height="0.4" material="color: #8B5A2B;"></a-cylinder>
+<a-cylinder position="4.3 -0.3 -3.2" radius="0.05" height="0.4" material="color: #8B5A2B;"></a-cylinder>
+<a-cylinder position="3.7 -0.3 -2.8" radius="0.05" height="0.4" material="color: #8B5A2B;"></a-cylinder>
+<a-cylinder position="4.3 -0.3 -2.8" radius="0.05" height="0.4" material="color: #8B5A2B;"></a-cylinder>
+
+<!-- Almirah at the left corner -->
+<a-box position="-4.8 1 -4" width="1" height="2" depth="0.5" material="color: #8B4513; metalness: 0.3; roughness: 0.6;"></a-box>
+<a-box position="-4.8 1.5 -3.75" width="0.9" height="1" depth="0.05" material="color: #654321;"></a-box>
+<a-box position="-4.8 0.5 -3.75" width="0.9" height="1" depth="0.05" material="color: #654321;"></a-box>
+<a-cylinder position="-4.3 1.5 -3.72" radius="0.02" height="0.02" material="color: #C0C0C0;"></a-cylinder>
+<a-cylinder position="-4.3 0.5 -3.72" radius="0.02" height="0.02" material="color: #C0C0C0;"></a-cylinder>
+
+
+<a-plane position="0 -0.7 -3" rotation="-90 0 0" width="5" height="5" material="src: https://cdn.pixabay.com/photo/2016/11/19/14/00/marble-1838974_960_720.jpg; repeat: 4 4; metalness: 0.3; roughness: 0.7;"></a-plane>
 
   </a-scene>
 </body>
